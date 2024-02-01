@@ -28,15 +28,15 @@ section {
 
 .outer-circle {
     @include flex-col;
-    width: 300px;
-    height: 300px;
+    width: 18.75rem;
+    height: 18.75rem;
     border: 1px solid $gray;
     border-radius: 50%;
 
     .inner-circle {
         @include flex-col;
-        width: 200px;
-        height: 200px;
+        width: 12.5rem;
+        height: 12.5rem;
         border-radius: 50%;
         border: 5px solid transparent;
         background:

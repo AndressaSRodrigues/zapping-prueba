@@ -72,10 +72,29 @@ section {
         margin: 2rem 0;
         color: $white;
         font-weight: 700;
-        font-size: 14px;
+        font-size: 0.9rem;
         border: 1px solid $gray;
         border-radius: 4px;
         background-color: $bgColor;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    section {
+        img {
+        margin: 4rem 0 4rem 0;
+    }
+        .success-title {
+            font-size: 2.5rem;
+        }
+
+        .success-message {
+            font-size: 1.5rem;
+        }
+
+        button {
+            width: 30%;
+        }
     }
 }
 </style>

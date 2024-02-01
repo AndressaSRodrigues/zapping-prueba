@@ -3,16 +3,17 @@ import { ref } from 'vue';
 import Loader from './Loader.vue';
 import Success from './Success.vue';
 import zappingBrand from '../assets/zapping.png';
+import cardIcon from '../assets/mastercard.png';
 
 const showLoader = ref(false);
 const showSuccess = ref(false);
 
 const handleConfirmation = () => {
-  showLoader.value = true;
-  setTimeout(() => {
-    showLoader.value = false;
-    showSuccess.value = true;
-  }, 8000);
+    showLoader.value = true;
+    setTimeout(() => {
+        showLoader.value = false;
+        showSuccess.value = true;
+    }, 8000);
 };
 
 </script>
@@ -61,7 +62,10 @@ const handleConfirmation = () => {
                 <div class="payment-method">
                     <div class="details">
                         <p>Método de pago</p>
-                        <span class="card-info"> *** 123</span>
+                        <span class="card-info">
+                            <img :src="cardIcon" alt="Mastercard Icon" width="auto">
+                            *** 123
+                        </span>
                     </div>
                     <button>Editar método de pago</button>
                 </div>
@@ -77,7 +81,7 @@ const handleConfirmation = () => {
             </article>
         </section>
     </div>
-    <Loader v-if="showLoader && !showSuccess"/>
+    <Loader v-if="showLoader && !showSuccess" />
     <Success v-if="showSuccess" />
 </template>
 
@@ -199,6 +203,20 @@ section {
 
             .details {
                 @include flex-row;
+
+                .card-info {
+                    @include flex-row;
+                    gap: 10px;
+
+                    img {
+                        width: 24px;
+                        height: 20px;
+                        padding: 0.2rem;
+                        background-color: $dark-gray;
+                        border: 1px solid $gray;
+                        border-radius: 4px;
+                    }
+                }
 
                 p {
                     font-size: 0.9rem;

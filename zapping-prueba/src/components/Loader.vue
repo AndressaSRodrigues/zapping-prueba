@@ -48,7 +48,7 @@ section {
             width: 120px;
             opacity: 30%;
             transition: transform 0.5s ease;
-            animation: flip 3s infinite;
+            animation: flip 1s infinite;
         }
 
         @keyframes flip {

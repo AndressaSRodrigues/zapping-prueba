@@ -10,11 +10,11 @@ import zappingLoader from '../assets/loader1.png';
             </div>
         </div>
         <div class="loading-messages">
-            <p>Estamos preparando tu plan</p>
-            <p>Validando con el tío Zapping</p>
-            <p>Descubriendo señales exclusivas</p>
-            <p>Sintonizando los deportes en vivo</p>
-            <p>Dando adiós al cable</p>
+            <p>{{ $t('loading1') }}</p>
+            <p>{{ $t('loading2') }}</p>
+            <p>{{ $t('loading3') }}</p>
+            <p>{{ $t('loading4') }}</p>
+            <p>{{ $t('loading5') }}</p>
         </div>
     </section>
 </template>

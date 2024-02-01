@@ -15,13 +15,13 @@ const goBack = () => {
     <div v-if="!showCheckout">
             <nav>
         <img :src="zappingBrand" alt="Logo de la marca Zapping" width="auto" />
-        <button>Ayuda</button>
+        <button>{{ $t('help') }}</button>
     </nav>
     <section>
         <img :src="successCheck" alt="Success checkmark" width="auto">
-        <p class="success-title">Muy bien!</p>
-        <p class="success-message">Tu suscripción a Zapping está lista, ya puedes comenzar a ver TV.</p>
-        <button @click="goBack">Regresar</button>
+        <p class="success-title">{{ $t('wellDone') }}</p>
+        <p class="success-message">{{ $t('subsMessage') }}</p>
+        <button @click="goBack">{{ $t('goBack') }}</button>
     </section>
     </div>
     <Checkout v-if="showCheckout"/>

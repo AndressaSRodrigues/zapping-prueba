@@ -1,0 +1,26 @@
+{
+    "help": "Ajuda",
+    "confirmation": "Confirme a sua inscrição",
+    "duration": "3 meses",
+    "promo": "Promoção ativa: 3 meses por R$00.000.",
+    "startDate": "A partir de 00/00/00, R$00.000/mês",
+    "includes": "INCLUI",
+    "trial": "7 dias de teste",
+    "free": "Grátis",
+    "method": "Método de pagamento",
+    "edit": "Editar método de pagamento",
+    "payNow": "Você paga agora",
+    "start": "Iniciar meu teste gratuito",
+
+
+    "loading1": "Estamos preparando o seu plano",
+    "loading2": "Validando com o Tio Zapping",
+    "loading3": "Descobrindo sinais exclusivos",
+    "loading4": "Sintonizando esportes ao vivo",
+    "loading5": "Dando tchau ao cabo",
+
+    "wellDone": "Muito bem!",
+    "subsMessage": "Sua assinatura do Zapping está pronta, agora você pode começar a assistir TV.",
+    "goBack": "Voltar"
+  }
+  

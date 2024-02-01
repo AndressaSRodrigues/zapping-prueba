@@ -93,7 +93,7 @@ const handleConfirmation = () => {
 nav {
     @include flex-row;
     width: 90%;
-    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 
     img {
         height: 1rem;
@@ -231,6 +231,7 @@ section {
                 border: 1px solid $gray;
                 border-radius: 4px;
                 background-color: $dark-gray;
+                cursor: pointer;
             }
         }
     }
@@ -262,6 +263,7 @@ section {
             border: none;
             border-radius: 4px;
             background-color: $pink;
+            cursor: pointer;
         }
     }
 }

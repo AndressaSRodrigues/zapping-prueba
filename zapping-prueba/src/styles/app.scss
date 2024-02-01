@@ -19,6 +19,7 @@ $font-family-poppins: 'Poppins', sans-serif;
     background-color: $gray;
     color: $white;
     font-weight: 600;
+    cursor: pointer;
 }
 
 @mixin flex-row {

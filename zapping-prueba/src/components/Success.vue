@@ -7,24 +7,24 @@ import successCheck from '../assets/success.png';
 const showCheckout = ref(false);
 
 const goBack = () => {
-  showCheckout.value = true;
+    showCheckout.value = true;
 };
 </script>
 
 <template>
     <div v-if="!showCheckout">
-            <nav>
-        <img :src="zappingBrand" alt="Logo de la marca Zapping" width="auto" />
-        <button>{{ $t('help') }}</button>
-    </nav>
-    <section>
-        <img :src="successCheck" alt="Success checkmark" width="auto">
-        <p class="success-title">{{ $t('wellDone') }}</p>
-        <p class="success-message">{{ $t('subsMessage') }}</p>
-        <button @click="goBack">{{ $t('goBack') }}</button>
-    </section>
+        <nav>
+            <img :src="zappingBrand" alt="Logo de la marca Zapping" width="auto" />
+            <button>{{ $t('help') }}</button>
+        </nav>
+        <section>
+            <img :src="successCheck" alt="Success checkmark" width="auto">
+            <p class="success-title">{{ $t('wellDone') }}</p>
+            <p class="success-message">{{ $t('subsMessage') }}</p>
+            <button @click="goBack">{{ $t('goBack') }}</button>
+        </section>
     </div>
-    <Checkout v-if="showCheckout"/>
+    <Checkout v-if="showCheckout" />
 </template>
 
 <style lang="scss" scoped>
@@ -34,7 +34,8 @@ const goBack = () => {
 
 nav {
     @include flex-row;
-    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    width: 90%;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 
     img {
         height: 1rem;
@@ -87,14 +88,21 @@ section {
         border: 1px solid $gray;
         border-radius: 4px;
         background-color: $bgColor;
+        cursor: pointer;
     }
 }
 
 @media screen and (min-width: 800px) {
+    nav {
+        padding: 3rem;
+        margin-left: 1rem;
+    }
+
     section {
         img {
-        margin: 4rem 0 4rem 0;
-    }
+            margin: 4rem 0 4rem 0;
+        }
+
         .success-title {
             font-size: 2.5rem;
         }

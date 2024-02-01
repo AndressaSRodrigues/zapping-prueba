@@ -10,3 +10,34 @@ $dark: #00000033;
 $white: #FFFFFF;
 $purple: #853FEF;
 $font-family-poppins: 'Poppins', sans-serif;
+
+@mixin nav-button {
+    width: 71px;
+    height: 32px;
+    border: 1px solid $gray;
+    border-radius: 74px;
+    background-color: $gray;
+    color: $white;
+    font-weight: 600;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-col-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}

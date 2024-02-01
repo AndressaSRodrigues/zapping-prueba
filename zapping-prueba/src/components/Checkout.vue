@@ -3,18 +3,18 @@ import zappingBrand from '../assets/zapping.png'
 </script>
 
 <template>
-    <header>
-        <img :src="zappingBrand" alt="Zapping Logo" width="auto" />
+    <nav>
+        <img :src="zappingBrand" alt="Logo de la marca Zapping" width="auto" />
         <button>Ayuda</button>
-    </header>
+    </nav>
 
     <section>
         <h1>Confirma tu suscripción</h1>
-        <div class="add-on">
+        <article class="subscription-details">
             <div class="plan-overview">
                 <h2>Plan Lite +</h2>
-                <p class="plan-info-container">
-                    <span class="plan-info">
+                <p class="plan-info">
+                    <span class="plan-price">
                         $13.900
                         <span class="plan-duration">
                             /3 meses
@@ -42,22 +42,22 @@ import zappingBrand from '../assets/zapping.png'
                 </p>
             </div>
             <hr>
-            <div class="payment">
+            <div class="payment-method">
                 <div class="details">
                     <p>Método de pago</p>
                     <span class="card-info"> *** 123</span>
                 </div>
                 <button>Editar método de pago</button>
             </div>
-        </div>
+        </article>
 
-        <div class="confirmation">
+        <article class="payment-confirmation">
             <p class="title">Pagas Ahora <span>$0</span></p>
             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                 ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam</p>
             <button>Comenzar mi prueba gratis</button>
-        </div>
+        </article>
     </section>
 </template>
 
@@ -66,80 +66,62 @@ import zappingBrand from '../assets/zapping.png'
     font-family: $font-family-poppins;
 }
 
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 48px 24px 24px 24px;
+nav {
+    @include flex-row;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
 
     img {
-        height: 16px;
+        height: 1rem;
     }
 
     button {
-        width: 71px;
-        height: 32px;
-        border: 1px solid $gray;
-        border-radius: 74px;
-        background-color: $gray;
-        color: $white;
-        font-weight: 600;
+        @include nav-button;
     }
 }
 
 section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
+    @include flex-col;
+    margin-bottom: 1.6rem;
 
     h1 {
-        font-size: 25px;
+        font-size: 1.6rem;
         font-weight: 700;
         text-align: center;
-        padding: 12px 0px 12px 0px;
+        padding: 0.75rem 0;
     }
 
-    .add-on {
-        display: flex;
-        flex-direction: column;
-        width: 312px;
+    .subscription-details {
+        width: 19.5rem;
         height: fit-content;
-        padding: 24px;
+        padding: 1.5rem;
         border: 1px solid $dark-gray;
-        border-radius: 16px;
+        border-radius: 1rem;
         background-color: $dark-gray;
 
         .plan-overview {
             h2 {
-                line-height: 6px;
+                line-height: 0.375rem;
             }
         }
 
-        .plan-info-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 12px;
-
-            .plan-info {
-                font-size: 16px;
+        .plan-info {
+            .plan-price {
+                font-size: 1rem;
                 font-weight: 900;
 
                 .plan-duration {
-                    font-size: 12px;
+                    font-size: 0.75rem;
                     font-weight: 500;
                     color: $light-gray;
                 }
             }
 
             .plan-promo {
-                width: 41px;
-                height: 12px;
-                padding: 5px 5px 8px 5px;
-                font-size: 12px;
+                width: 2.5rem;
+                height: 0.75rem;
+                margin-left: 0.75rem;
+                padding: 0.3rem;
+                font-size: 0.75rem;
                 font-weight: 400;
                 text-align: center;
                 border: none;
@@ -149,17 +131,15 @@ section {
         }
 
         p {
-            font-size: 12px;
+            font-size: 0.75rem;
         }
 
         .plan-features {
-            height: 101px;
-            padding: 12px;
+            @include flex-col-start;
+            height: 6.3rem;
+            padding: 0.75rem;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: start;
-            line-height: 5px;
+            line-height: 0.3rem;
             color: $light-gray;
             border-radius: 8px;
             border: 1px solid transparent;
@@ -173,12 +153,10 @@ section {
             }
 
             .features-1 {
-                width: 288px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+                @include flex-row;
+                width: 18rem;
                 color: $white;
-                font-size: 14px;
+                font-size: 0.9rem;
                 font-weight: 500;
 
                 .features-1-days {
@@ -193,26 +171,23 @@ section {
             margin: 30px 0;
         }
 
-        .payment {
+        .payment-method {
             display: flex;
             flex-direction: column;
             justify-content: center;
 
             .details {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
+                @include flex-row;
 
                 p {
-                    font-size: 14px;
+                    font-size: 0.9rem;
                 }
             }
 
             button {
-                height: 32px;
+                height: 2rem;
                 color: $white;
-                font-size: 14px;
+                font-size: 0.9rem;
                 font-weight: 600;
                 border: 1px solid $gray;
                 border-radius: 4px;
@@ -221,37 +196,40 @@ section {
         }
     }
 
-    .confirmation {
-        display: flex;
-        flex-direction: column;
-        padding: 0 16px;
-
+    .payment-confirmation {
+        padding: 0 1rem;
 
         .title {
             display: flex;
             justify-content: space-between;
-            font-size: 32px;
+            font-size: 2rem;
             font-weight: 500;
         }
 
         .description {
             color: $light-gray;
-            font-size: 14px;
+            font-size: 0.9rem;
             font-weight: 400;
-            margin-bottom: 25px;
+            margin-bottom: 1.6rem;
         }
 
         button {
-            width: 340px;
-            height: 52px;
-            padding: 8px 32px 8px 32px;
+            width: 21.25rem;
+            height: 3.25rem;
+            padding: 0.5rem 2rem;
             color: $white;
-            font-size: 14px;
+            font-size: 0.875rem;
             font-weight: 700;
             border: none;
             border-radius: 4px;
             background-color: $pink;
         }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .payment-confirmation {
+        width: 22%;
     }
 }
 </style>

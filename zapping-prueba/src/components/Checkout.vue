@@ -267,8 +267,13 @@ section {
 }
 
 @media screen and (min-width: 800px) {
+
+    nav {
+        padding: 3rem;
+        margin-left: 1rem;
+    }
     .payment-confirmation {
-        width: 22%;
+        width: 20rem;
     }
 }
 </style>

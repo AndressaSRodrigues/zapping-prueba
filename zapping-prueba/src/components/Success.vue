@@ -1,10 +1,19 @@
 <script setup>
+import { ref } from 'vue';
+import Checkout from './Checkout.vue';
 import zappingBrand from '../assets/zapping2.png';
 import successCheck from '../assets/success.png';
+
+const showCheckout = ref(false);
+
+const goBack = () => {
+  showCheckout.value = true;
+};
 </script>
 
 <template>
-    <nav>
+    <div v-if="!showCheckout">
+            <nav>
         <img :src="zappingBrand" alt="Logo de la marca Zapping" width="auto" />
         <button>Ayuda</button>
     </nav>
@@ -12,8 +21,10 @@ import successCheck from '../assets/success.png';
         <img :src="successCheck" alt="Success checkmark" width="auto">
         <p class="success-title">Muy bien!</p>
         <p class="success-message">Tu suscripción a Zapping está lista, ya puedes comenzar a ver TV.</p>
-        <button>Regresar</button>
+        <button @click="goBack">Regresar</button>
     </section>
+    </div>
+    <Checkout v-if="showCheckout"/>
 </template>
 
 <style lang="scss" scoped>

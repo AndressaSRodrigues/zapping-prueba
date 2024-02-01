@@ -1,64 +1,84 @@
 <script setup>
-import zappingBrand from '../assets/zapping.png'
+import { ref } from 'vue';
+import Loader from './Loader.vue';
+import Success from './Success.vue';
+import zappingBrand from '../assets/zapping.png';
+
+const showLoader = ref(false);
+const showSuccess = ref(false);
+
+const handleConfirmation = () => {
+  showLoader.value = true;
+  setTimeout(() => {
+    showLoader.value = false;
+    showSuccess.value = true;
+  }, 8000);
+};
+
 </script>
 
 <template>
-    <nav>
-        <img :src="zappingBrand" alt="Logo de la marca Zapping" width="auto" />
-        <button>Ayuda</button>
-    </nav>
+    <div v-if="!showLoader && !showSuccess">
+        <nav>
+            <img :src="zappingBrand" alt="Logo de la marca Zapping" width="auto" />
+            <button>Ayuda</button>
+        </nav>
 
-    <section>
-        <h1>Confirma tu suscripción</h1>
-        <article class="subscription-details">
-            <div class="plan-overview">
-                <h2>Plan Lite +</h2>
-                <p class="plan-info">
-                    <span class="plan-price">
-                        $13.900
-                        <span class="plan-duration">
-                            /3 meses
+        <section>
+            <h1>Confirma tu suscripción</h1>
+            <article class="subscription-details">
+                <div class="plan-overview">
+                    <h2>Plan Lite +</h2>
+                    <p class="plan-info">
+                        <span class="plan-price">
+                            $13.900
+                            <span class="plan-duration">
+                                /3 meses
+                            </span>
                         </span>
-                    </span>
-                    <span class="plan-promo">
-                        Promo
-                    </span>
-                </p>
-                <p>
-                    Promoción activa: 3 meses por $00.000.
-                    <br>
-                    A partir del 00/00/00, $00.000/mes
-                </p>
-            </div>
-
-            <div class="plan-features">
-                <h3>INCLUYE</h3>
-                <p class="features-1">
-                    <span class="features-1-days">7 días de pruebas</span>
-                    <span>Gratis</span>
-                </p>
-                <p class="features-2">
-                    A partir del 00/00/00, $00.000/mes
-                </p>
-            </div>
-            <hr>
-            <div class="payment-method">
-                <div class="details">
-                    <p>Método de pago</p>
-                    <span class="card-info"> *** 123</span>
+                        <span class="plan-promo">
+                            Promo
+                        </span>
+                    </p>
+                    <p>
+                        Promoción activa: 3 meses por $00.000.
+                        <br>
+                        A partir del 00/00/00, $00.000/mes
+                    </p>
                 </div>
-                <button>Editar método de pago</button>
-            </div>
-        </article>
 
-        <article class="payment-confirmation">
-            <p class="title">Pagas Ahora <span>$0</span></p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam</p>
-            <button>Comenzar mi prueba gratis</button>
-        </article>
-    </section>
+                <div class="plan-features">
+                    <h3>INCLUYE</h3>
+                    <p class="features-1">
+                        <span class="features-1-days">7 días de pruebas</span>
+                        <span>Gratis</span>
+                    </p>
+                    <p class="features-2">
+                        A partir del 00/00/00, $00.000/mes
+                    </p>
+                </div>
+                <hr>
+                <div class="payment-method">
+                    <div class="details">
+                        <p>Método de pago</p>
+                        <span class="card-info"> *** 123</span>
+                    </div>
+                    <button>Editar método de pago</button>
+                </div>
+            </article>
+
+            <article class="payment-confirmation">
+                <p class="title">Pagas Ahora <span>$0</span></p>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt
+                    ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam</p>
+                <button @click="handleConfirmation">Comenzar mi prueba gratis</button>
+            </article>
+        </section>
+    </div>
+    <Loader v-if="showLoader && !showSuccess"/>
+    <Success v-if="showSuccess" />
 </template>
 
 <style lang="scss" scoped>
@@ -68,6 +88,7 @@ import zappingBrand from '../assets/zapping.png'
 
 nav {
     @include flex-row;
+    width: 90%;
     padding: 3rem 1.5rem 1.5rem 1.5rem;
 
     img {

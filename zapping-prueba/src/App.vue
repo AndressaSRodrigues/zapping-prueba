@@ -1,16 +1,16 @@
 <script setup>
-
+import Checkout from './components/Checkout.vue';
 </script>
 
 <template>
-<h1>zapping</h1>
+<Checkout />
 </template>
 
 <style lang="scss" scoped>
-
-h1 {
-    color: $pink;
-    font-family: $font-family-poppins;
+* {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-
 </style>

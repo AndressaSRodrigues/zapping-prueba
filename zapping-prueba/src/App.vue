@@ -1,16 +1,14 @@
 <script setup>
-import Checkout from './components/Checkout.vue';
+// import Checkout from './components/Checkout.vue';
+import Loader from './components/Loader.vue';
 </script>
 
 <template>
-<Checkout />
+    <Loader />
 </template>
 
 <style lang="scss" scoped>
 * {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-col;
 }
 </style>

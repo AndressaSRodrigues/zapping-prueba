@@ -6,6 +6,11 @@
 <h1>zapping</h1>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
+h1 {
+    color: $pink;
+    font-family: $font-family-poppins;
+}
 
 </style>
